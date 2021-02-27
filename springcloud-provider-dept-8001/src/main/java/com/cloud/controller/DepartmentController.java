@@ -13,7 +13,7 @@ public class DepartmentController {
     private DepartmentService departmentService;
 
     @PostMapping
-    public Response addDepartment(@RequestBody Department department) {
+    public Response addDepartment(Department department) {
         departmentService.save(department);
         return Response.success();
     }
