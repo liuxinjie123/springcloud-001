@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.dao.DepartmentDao">
+
+    <insert id="save" parameterType="com.cloud.pojo.Department">
+        insert into dept(name, db_source, create_time)
+        values (#{name}, DATABASE(), now())
+    </insert>
+
+    <select id="findById" parameterType="java.lang.Long" resultType="com.cloud.pojo.Department">
+        select * from dept where id=#{id}
+    </select>
+
+    <select id="findAll" resultType="com.cloud.pojo.Department">
+        select * from dept order by id desc
+    </select>
+
+</mapper>
