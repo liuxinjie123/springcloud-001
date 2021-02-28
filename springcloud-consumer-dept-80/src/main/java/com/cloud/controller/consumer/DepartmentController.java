@@ -19,7 +19,10 @@ public class DepartmentController {
     @Autowired
     private RestTemplate restTemplate; // 提供多种便捷访问远程http服务的方法，简单的Restful服务模板
 
-    private static final String DEPT_REST_URL_PREFIX = "http://localhost:8001/";
+//    private static final String DEPT_REST_URL_PREFIX = "http://localhost:8001/";
+    // Ribbon 这里设置的地址应该是一个变量，通过服务名来访问
+    private static final String DEPT_REST_URL_PREFIX = "http://SPRING-CLOUD-PROVIDER-DEPT";
+
 
     @PostMapping
     public Response save(@RequestBody Department department) {

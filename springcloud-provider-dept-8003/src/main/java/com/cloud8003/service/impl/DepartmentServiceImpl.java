@@ -1,10 +1,10 @@
-package com.cloud.service.impl;
+package com.cloud8003.service.impl;
 
-import com.cloud.dao.DepartmentDao;
 import com.cloud.pojo.Department;
-import com.cloud.service.DepartmentService;
+import com.cloud8003.dao.DepartmentDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.cloud8003.service.DepartmentService;
 
 import java.util.List;
 

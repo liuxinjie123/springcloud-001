@@ -1,4 +1,4 @@
-package com.cloud.dao;
+package com.cloud8002.dao;
 
 import com.cloud.pojo.Department;
 import org.apache.ibatis.annotations.Mapper;

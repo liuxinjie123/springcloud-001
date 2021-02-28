@@ -1,8 +1,8 @@
-package com.cloud.controller;
+package com.cloud8003.controller;
 
 import com.cloud.common.Response;
 import com.cloud.pojo.Department;
-import com.cloud.service.DepartmentService;
+import com.cloud8003.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
