@@ -2,15 +2,15 @@ package com.cloud8003.service.impl;
 
 import com.cloud.pojo.Department;
 import com.cloud8003.dao.DepartmentDao;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cloud8003.service.DepartmentService;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
-    @Autowired
+    @Resource
     private DepartmentDao departmentDao;
 
     @Override
