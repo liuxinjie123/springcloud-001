@@ -1,4 +1,4 @@
-package com.myRule;
+package com.myrule;
 
 /*
  *

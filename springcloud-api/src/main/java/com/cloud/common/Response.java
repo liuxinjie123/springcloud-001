@@ -1,20 +1,22 @@
 package com.cloud.common;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
+@NoArgsConstructor
 @Accessors(chain = true)
 public class Response<T> implements Serializable {
     private String code;
     private String desc;
     private T data;
-
-    public Response() {}
 
     public Response(String code, String desc) {
         this.code = code;
