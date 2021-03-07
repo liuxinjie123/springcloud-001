@@ -26,7 +26,11 @@ public class DepartmentController {
 
     @GetMapping("{id}")
     public Department findById(@PathVariable("id") Long id) {
-        return departmentService.findById(id);
+        Department department = departmentService.findById(id);
+        if (null == department) {
+            throw new RuntimeException("Not Found");
+        }
+        return department;
     }
 
     @GetMapping

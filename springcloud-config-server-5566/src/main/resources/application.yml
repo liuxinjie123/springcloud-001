@@ -1,0 +1,12 @@
+server:
+  port: 5566
+
+spring:
+  application:
+    name: spring-cloud-config-server-5566
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/liuxinjie123/springcloud-config.git
