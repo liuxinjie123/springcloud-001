@@ -22,6 +22,7 @@
         <module>springcloud-zuul-9527</module>
         <module>springcloud-config-server-5566</module>
         <module>springcloud-config-client-3355</module>
+        <module>springcloud-config-eureka-7001</module>
     </modules>
 
     <!-- 打包方式 -->
