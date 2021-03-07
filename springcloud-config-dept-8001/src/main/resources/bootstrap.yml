@@ -1,0 +1,9 @@
+# 系统级别的配置
+spring:
+  cloud:
+    config:
+      # 从 git拿到的资源名称
+      uri: http://localhost:5566
+      name: config-depart
+      profile: dev
+      label: master

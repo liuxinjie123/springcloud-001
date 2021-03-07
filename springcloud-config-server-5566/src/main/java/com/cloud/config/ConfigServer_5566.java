@@ -6,8 +6,8 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 
 @SpringBootApplication
 @EnableConfigServer
-public class ConfigServer5566 {
+public class ConfigServer_5566 {
     public static void main(String[] args) {
-        SpringApplication.run(ConfigServer5566.class, args);
+        SpringApplication.run(ConfigServer_5566.class, args);
     }
 }

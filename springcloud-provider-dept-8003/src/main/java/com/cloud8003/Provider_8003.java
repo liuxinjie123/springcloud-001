@@ -9,8 +9,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @EnableEurekaClient
 @SpringBootApplication
-public class Provider8003 {
+public class Provider_8003 {
     public static void main(String[] args) {
-        SpringApplication.run(Provider8003.class, args);
+        SpringApplication.run(Provider_8003.class, args);
     }
 }
