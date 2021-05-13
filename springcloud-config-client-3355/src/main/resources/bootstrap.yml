@@ -4,6 +4,6 @@ spring:
     config:
       # 从 git拿到的资源名称
       uri: http://localhost:5566
-      name: config-client
+      name: config-client-3355
       profile: dev
       label: master

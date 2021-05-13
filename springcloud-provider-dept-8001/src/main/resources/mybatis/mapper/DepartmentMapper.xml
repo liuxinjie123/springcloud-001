@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cloud8001.dao.DepartmentDao">
+<mapper namespace="com.cloud.provider.dept8001.dao.DepartmentDao">
 
     <insert id="save" parameterType="Department">
         insert into dept(name, db_source, create_time)
