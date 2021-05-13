@@ -4,6 +4,23 @@ spring:
     config:
       # 从 git拿到的资源名称
       uri: http://localhost:5566
-      name: config-client-3355
+      name: application
       profile: dev
       label: master
+#      discovery:
+#        enabled: true
+#        service-id: spring-cloud-config-server-5566
+        #config-server服务名称
+      bus:
+        refresh:
+          enabled: true
+
+
+
+  #本地环境不需要配置mq
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
