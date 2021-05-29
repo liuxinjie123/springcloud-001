@@ -2,7 +2,7 @@ package com.cloud.dept.feign.controller;
 
 import com.cloud.api.common.Response;
 import com.cloud.api.pojo.Department;
-import com.cloud.service.DepartClientService;
+import com.cloud.api.service.DepartClientService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
