@@ -19,7 +19,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     public Response save(Department department) {
         int count = departmentDao.save(department);
         if (1 == count) {
-            return Response.success(department);
+            return Response.success(departmentDao.findById(department.getId()));
         } else {
             return Response.error();
         }
