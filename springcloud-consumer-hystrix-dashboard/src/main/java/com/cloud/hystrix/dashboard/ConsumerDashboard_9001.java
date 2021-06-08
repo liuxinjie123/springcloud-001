@@ -7,7 +7,9 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 @SpringBootApplication
 @EnableHystrixDashboard     // 开启监控页面
 public class ConsumerDashboard_9001 {
+
     public static void main(String[] args) {
         SpringApplication.run(ConsumerDashboard_9001.class, args);
     }
+
 }

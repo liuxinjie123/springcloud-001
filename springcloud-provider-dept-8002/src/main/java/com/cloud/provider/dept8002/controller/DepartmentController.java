@@ -3,6 +3,7 @@ package com.cloud.provider.dept8002.controller;
 import com.cloud.api.common.Response;
 import com.cloud.api.pojo.Department;
 import com.cloud.provider.dept8002.service.DepartmentService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -25,6 +26,7 @@ public class DepartmentController {
     }
 
     @GetMapping("{id}")
+    @HystrixCommand(fallbackMethod = "findByIdHystrix")
     public Response findById(@PathVariable("id") Long id) {
         return departmentService.findById(id);
     }
@@ -46,5 +48,12 @@ public class DepartmentController {
         // 得到一个具体的微服务信息，通过具体的微服务id，application.name
         List<ServiceInstance> instanceList = client.getInstances("spring-cloud-provider-dept");
         return Response.success(instanceList);
+    }
+
+    /**
+     * 备选方案
+     */
+    public Response findByIdHystrix(@PathVariable("id") Long id) {
+        return Response.success(new Department().setId(id).setName("id=>" + id + ", 不存在该用户！ @Hystrix"));
     }
 }
