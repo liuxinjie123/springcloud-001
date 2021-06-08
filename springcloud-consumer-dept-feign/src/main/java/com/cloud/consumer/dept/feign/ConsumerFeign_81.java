@@ -11,8 +11,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients(basePackages = {"com.cloud.consumer.dept.feign"})
-public class ConsumerFeign_80 {
+public class ConsumerFeign_81 {
     public static void main(String[] args) {
-        SpringApplication.run(ConsumerFeign_80.class, args);
+        SpringApplication.run(ConsumerFeign_81.class, args);
     }
 }
