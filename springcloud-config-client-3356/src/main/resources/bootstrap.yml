@@ -5,7 +5,7 @@ spring:
       # 从 git拿到的资源名称
       # uri: http://localhost:5566
       name: application
-      profile: dev
+      profile: test
       label: master
       discovery:
         enabled: true

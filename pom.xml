@@ -22,6 +22,7 @@
         <module>springcloud-zuul-9527</module>
         <module>springcloud-config-server-5566</module>
         <module>springcloud-config-client-3355</module>
+        <module>springcloud-config-client-3356</module>
         <module>springcloud-config-eureka-7001</module>
         <module>springcloud-config-dept-8001</module>
     </modules>
@@ -118,7 +119,7 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
-                <version>2.12.0</version>
+                <version>2.10.0</version>
             </dependency>
 
             <dependency>
