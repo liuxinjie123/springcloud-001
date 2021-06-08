@@ -20,18 +20,13 @@ public class DepartmentController {
     private DiscoveryClient client;
 
     @PostMapping
-    public Boolean addDepartment(@RequestBody Department department) {
-        departmentService.save(department);
-        return true;
+    public Response addDepartment(@RequestBody Department department) {
+        return departmentService.save(department);
     }
 
     @GetMapping("{id}")
-    public Department findById(@PathVariable("id") Long id) {
-        Department department = departmentService.findById(id);
-        if (null == department) {
-            throw new RuntimeException("Not Found");
-        }
-        return department;
+    public Response findById(@PathVariable("id") Long id) {
+        return departmentService.findById(id);
     }
 
     @GetMapping

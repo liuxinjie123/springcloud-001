@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface DepartmentDao {
 
-    public boolean save(Department department);
+    public int save(Department department);
 
     public Department findById(Long id);
 

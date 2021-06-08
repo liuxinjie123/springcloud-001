@@ -1,15 +1,14 @@
 package com.cloud.provider.dept8002.service;
 
+import com.cloud.api.common.Response;
 import com.cloud.api.pojo.Department;
-
-import java.util.List;
 
 public interface DepartmentService {
 
-    public boolean save(Department department);
+    public Response save(Department department);
 
-    public Department findById(Long id);
+    public Response findById(Long id);
 
-    public List<Department> findAll();
+    public Response findAll();
 
 }

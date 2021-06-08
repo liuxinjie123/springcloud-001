@@ -21,17 +21,17 @@ public class DepartmentController {
 
     @PostMapping
     public Response addDepartment(@RequestBody Department department) {
-        return Response.success(departmentService.save(department));
+        return departmentService.save(department);
     }
 
     @GetMapping("{id}")
     public Response findById(@PathVariable("id") Long id) {
-        return Response.success(departmentService.findById(id));
+        return departmentService.findById(id);
     }
 
     @GetMapping
     public Response findAll() {
-        return Response.success(departmentService.findAll());
+        return departmentService.findAll();
     }
 
     /**

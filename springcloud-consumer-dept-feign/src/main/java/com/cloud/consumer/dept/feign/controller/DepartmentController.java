@@ -2,7 +2,7 @@ package com.cloud.consumer.dept.feign.controller;
 
 import com.cloud.api.common.Response;
 import com.cloud.api.pojo.Department;
-import com.cloud.api.service.DepartClientService;
+import com.cloud.consumer.dept.feign.service.DepartClientService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -19,17 +19,17 @@ public class DepartmentController {
 
     @PostMapping
     public Response save(@RequestBody Department department) {
-        return Response.success(this.departService.save(department));
+        return this.departService.save(department);
     }
 
     @GetMapping("/{id}")
     public Response findById(@PathVariable(value = "id") Long id) {
-        return Response.success(this.departService.findById(id));
+        return this.departService.findById(id);
     }
 
     @GetMapping
     public Response findAll() {
-        return Response.success(this.departService.findAll());
+        return this.departService.findAll();
     }
 
 }
