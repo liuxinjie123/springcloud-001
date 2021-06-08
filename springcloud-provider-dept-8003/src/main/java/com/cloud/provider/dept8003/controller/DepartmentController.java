@@ -20,19 +20,18 @@ public class DepartmentController {
     private DiscoveryClient client;
 
     @PostMapping
-    public Boolean addDepartment(Department department) {
-        departmentService.save(department);
-        return true;
+    public Response addDepartment(@RequestBody Department department) {
+        return Response.success(departmentService.save(department));
     }
 
     @GetMapping("{id}")
-    public Department findById(@PathVariable("id") Long id) {
-        return departmentService.findById(id);
+    public Response findById(@PathVariable("id") Long id) {
+        return Response.success(departmentService.findById(id));
     }
 
     @GetMapping
-    public List<Department> findAll() {
-        return departmentService.findAll();
+    public Response findAll() {
+        return Response.success(departmentService.findAll());
     }
 
     /**

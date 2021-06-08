@@ -1,4 +1,4 @@
-package com.cloud.dept.feign.config;
+package com.cloud.consumer.dept.feign.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

@@ -1,5 +1,6 @@
 package com.cloud.provider.dept8002.controller;
 
+import com.cloud.api.common.Response;
 import com.cloud.api.pojo.Department;
 import com.cloud.provider.dept8002.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,32 +20,32 @@ public class DepartmentController {
     private DiscoveryClient client;
 
     @PostMapping
-    public Boolean addDepartment(Department department) {
+    public Response addDepartment(@RequestBody Department department) {
         departmentService.save(department);
-        return true;
+        return Response.success();
     }
 
     @GetMapping("{id}")
-    public Department findById(@PathVariable("id") Long id) {
-        return departmentService.findById(id);
+    public Response findById(@PathVariable("id") Long id) {
+        return Response.success(departmentService.findById(id));
     }
 
     @GetMapping
-    public List<Department> findAll() {
-        return departmentService.findAll();
+    public Response findAll() {
+        return Response.success(departmentService.findAll());
     }
 
     /**
      * 注册进来的微服务，获取一些信息
      */
     @GetMapping("/service")
-    public List<ServiceInstance> discovery() {
+    public Response discovery() {
         // 获取微服务列表的清单
         List<String> serviceList = client.getServices();
         System.out.println(" discovery => services: " + serviceList);
 
         // 得到一个具体的微服务信息，通过具体的微服务id，application.name
         List<ServiceInstance> instanceList = client.getInstances("spring-cloud-provider-dept");
-        return instanceList;
+        return Response.success(instanceList);
     }
 }

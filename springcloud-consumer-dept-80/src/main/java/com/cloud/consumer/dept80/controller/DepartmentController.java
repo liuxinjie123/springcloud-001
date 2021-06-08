@@ -23,19 +23,19 @@ public class DepartmentController {
     @PostMapping
     public Response save(@RequestBody Department department) {
         String url = DEPT_REST_URL_PREFIX + "/dept";
-        return Response.success(restTemplate.postForObject(url, department, Department.class));
+        return restTemplate.postForObject(url, department, Response.class);
     }
 
     @GetMapping("/{id}")
     public Response findById(@PathVariable(value = "id") Long id) {
         String url = DEPT_REST_URL_PREFIX + "/dept/" + id;
-        return Response.success(restTemplate.getForObject(url, Department.class));
+        return restTemplate.getForObject(url, Response.class);
     }
 
     @GetMapping
     public Response findAll() {
         String url = DEPT_REST_URL_PREFIX + "/dept";
-        return Response.success(restTemplate.getForObject(url, Department.class));
+        return restTemplate.getForObject(url, Response.class);
     }
 
 }

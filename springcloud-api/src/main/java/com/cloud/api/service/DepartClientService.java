@@ -1,11 +1,13 @@
 package com.cloud.api.service;
 
+import com.cloud.api.common.Response;
 import com.cloud.api.pojo.Department;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -14,12 +16,12 @@ import java.util.List;
 public interface DepartClientService {
 
     @PostMapping(value = "/dept")
-    public boolean save(Department department);
+    Response save(@RequestBody Department department);
 
     @GetMapping(value = "/dept/{id}")
-    public Department findById(@PathVariable("id") Long id);
+    Response findById(@PathVariable("id") Long id);
 
     @GetMapping(value = "/dept")
-    public List<Department> findAll();
+    Response findAll();
 
 }

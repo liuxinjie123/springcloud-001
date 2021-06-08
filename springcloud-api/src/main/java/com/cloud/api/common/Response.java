@@ -37,6 +37,10 @@ public class Response<T> implements Serializable {
         return new Response().setCode(CodeEnu.SUCCESS.code).setDesc(CodeEnu.SUCCESS.desc).setData(data);
     }
 
+    public static Response error() {
+        return new Response().setCode(CodeEnu.ERROR.code).setDesc(CodeEnu.ERROR.desc);
+    }
+
     public static Response error(String desc) {
         return new Response().setCode(CodeEnu.ERROR.code).setDesc(desc);
     }
@@ -44,5 +48,4 @@ public class Response<T> implements Serializable {
     public static Response error(CodeEnu enu) {
         return new Response().setCode(enu.code).setDesc(enu.desc);
     }
-
 }

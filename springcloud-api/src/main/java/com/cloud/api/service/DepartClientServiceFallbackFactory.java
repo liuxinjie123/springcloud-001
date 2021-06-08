@@ -1,5 +1,6 @@
 package com.cloud.api.service;
 
+import com.cloud.api.common.Response;
 import com.cloud.api.pojo.Department;
 import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;
@@ -11,24 +12,25 @@ import java.util.List;
  */
 @Component
 public class DepartClientServiceFallbackFactory implements FallbackFactory {
+
     @Override
     public DepartClientService create(Throwable throwable) {
         return new DepartClientService() {
             @Override
-            public boolean save(Department department) {
-                return false;
+            public Response save(Department department) {
+                return Response.error();
             }
 
             @Override
-            public Department findById(Long id) {
-                return new Department()
+            public Response findById(Long id) {
+                return Response.success(new Department()
                         .setId(id)
-                        .setName("id=>" + id + ", 没有对应的信息，客户端提供了降级信息，这个服务现在已被关闭。！ @Hystrix");
+                        .setName("id=>" + id + ", 没有对应的信息，客户端提供了降级信息，这个服务现在已被关闭。！ @Hystrix"));
             }
 
             @Override
-            public List<Department> findAll() {
-                return null;
+            public Response findAll() {
+                return Response.success();
             }
         };
     }

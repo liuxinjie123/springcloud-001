@@ -1,4 +1,4 @@
-package com.cloud.dept.feign.controller;
+package com.cloud.consumer.dept.feign.controller;
 
 import com.cloud.api.common.Response;
 import com.cloud.api.pojo.Department;

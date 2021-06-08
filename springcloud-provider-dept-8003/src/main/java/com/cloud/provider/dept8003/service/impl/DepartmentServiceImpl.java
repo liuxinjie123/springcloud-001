@@ -4,6 +4,8 @@ import com.cloud.api.pojo.Department;
 import com.cloud.provider.dept8003.dao.DepartmentDao;
 import com.cloud.provider.dept8003.service.DepartmentService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -18,6 +20,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentDao.save(department);
     }
 
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public Department findById(Long id) {
         return departmentDao.findById(id);
