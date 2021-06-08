@@ -1,4 +1,4 @@
-package com.cloud.hystrix;
+package com.cloud.hystrix.dashboard;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,6 +10,4 @@ public class ConsumerDashboard_9001 {
     public static void main(String[] args) {
         SpringApplication.run(ConsumerDashboard_9001.class, args);
     }
-
-
 }

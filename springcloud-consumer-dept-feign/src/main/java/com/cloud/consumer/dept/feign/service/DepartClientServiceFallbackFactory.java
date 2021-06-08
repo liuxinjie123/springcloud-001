@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * 降级
  */
-@Component
+//@Component
 public class DepartClientServiceFallbackFactory implements FallbackFactory {
 
     @Override
